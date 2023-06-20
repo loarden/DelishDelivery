@@ -1,7 +1,7 @@
 import { inputStyle } from "../assets/style"
 import Button from "./Button"
 
-function ContactForm({onSubmit}) {
+function ContactForm({onSubmit, isSent}) {
   return (
     <form onSubmit={onSubmit}
       className="flex flex-col relative gap-5 max-w-lg w-11/12">
@@ -11,6 +11,7 @@ function ContactForm({onSubmit}) {
       <input className={inputStyle} required type="email" placeholder="Email" />
       <textarea className={`${inputStyle} resize-none`} required placeholder="Message..." cols="30" rows="4"></textarea>
       <Button
+        isSent={isSent}
         text='Submit'
         padding={3}
         color='amber'

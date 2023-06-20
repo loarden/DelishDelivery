@@ -145,7 +145,7 @@ function Navbar() {
           <input className='w-full p-2 text-black border-2 border-amber-500' type="text" placeholder='Search...' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
           <div className='absolute z-30 w-full min-h-fit max-h-80 bg-amber-500 overflow-auto'>
             {searchValue.length !== 0 ? products
-              .filter(prod => prod.name.toLowerCase().includes(searchValue, 0) || prod.type.toLowerCase().includes(searchValue, 0))
+              .filter(prod => prod.name.toLowerCase().includes(searchValue.toLowerCase(), 0) || prod.type.toLowerCase().includes(searchValue.toLowerCase(), 0))
               .map(prod => {
                 return <Link key={prod.id} to={`/product/${prod.id}`}>
                   <div className='flex items-center w-full h-20 p-1 border-b-2 border-amber-400'>

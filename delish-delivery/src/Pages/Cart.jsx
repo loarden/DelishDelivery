@@ -12,6 +12,7 @@ function Cart() {
   const { cartItems } = useContext(CartContext)
   const [next, setNext] = useState(false)
   const [showModal, setShowModal] = useModal(false)
+  const [isSent, setIsSent] = useState(false)
 
   return (
     <>
@@ -21,9 +22,11 @@ function Cart() {
             <>
               {next ?
                 <OrderForm
+                  isSent={isSent}
                   onSubmit={(e) => {
                     e.preventDefault()
                     setShowModal(true)
+                    setIsSent(true)
                   }}
                 /> :
                 <CartItemList
