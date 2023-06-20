@@ -1,0 +1,1 @@
+export const inputStyle = "p-3 border-2 border-amber-500 rounded-md"
