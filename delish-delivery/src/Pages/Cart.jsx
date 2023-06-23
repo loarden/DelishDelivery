@@ -7,12 +7,14 @@ import Modal from "../Components/Modal"
 import useModal from "../Hooks/useModal"
 import { AnimatePresence } from "framer-motion"
 import Animation from "../Components/Animation"
+import { useNavigate } from 'react-router-dom'
 
 function Cart() {
-  const { cartItems } = useContext(CartContext)
+  const { cartItems, clearCart } = useContext(CartContext)
   const [next, setNext] = useState(false)
   const [showModal, setShowModal] = useModal(false)
   const [isSent, setIsSent] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <>
@@ -27,6 +29,10 @@ function Cart() {
                     e.preventDefault()
                     setShowModal(true)
                     setIsSent(true)
+                    setTimeout(() => {
+                      navigate('/')
+                      localStorage.clear()
+                    }, 1700)
                   }}
                 /> :
                 <CartItemList

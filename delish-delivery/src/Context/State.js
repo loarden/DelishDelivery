@@ -44,12 +44,17 @@ const CartState = ({ children }) => {
     //change item's quantity
   }
 
+  const clearCart = (item) => {
+    dispatch({ type: 'CLEAR_CART', payload: item })
+  }
+
   return (
     <CartContext.Provider value={{
       cartItems: state.cartItems,
       addToCart,
       removeFromCart,
-      changeItemQuantity
+      changeItemQuantity,
+      clearCart
     }}>
       {children}
     </CartContext.Provider>

@@ -21,6 +21,12 @@ const CartReducer = (state, action) => {
         )
       }
     }
+    case 'CLEAR_CART': {
+      return {
+        undefined,
+        action
+      }
+    }
     case "STORE_STATE": {
       return action.value
     }
