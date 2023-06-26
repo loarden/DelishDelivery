@@ -1,20 +1,26 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import CartContext from "../Context/Context"
 import CartItemList from "../Components/CartItemList"
 import FunctionButton from '../Components/FunctionButton'
 import OrderForm from "../Components/OrderForm"
 import Modal from "../Components/Modal"
 import useModal from "../Hooks/useModal"
-import { AnimatePresence } from "framer-motion"
 import Animation from "../Components/Animation"
-import { useNavigate } from 'react-router-dom'
 
 function Cart() {
   const { cartItems, clearCart } = useContext(CartContext)
   const [next, setNext] = useState(false)
   const [showModal, setShowModal] = useModal(false)
   const [isSent, setIsSent] = useState(false)
-  const navigate = useNavigate()
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    setShowModal(true)
+    setIsSent(true)
+    setTimeout(() => {
+      clearCart(cartItems)
+    }, 2000)
+  }
 
   return (
     <>
@@ -25,15 +31,7 @@ function Cart() {
               {next ?
                 <OrderForm
                   isSent={isSent}
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    setShowModal(true)
-                    setIsSent(true)
-                    setTimeout(() => {
-                      navigate('/')
-                      localStorage.clear()
-                    }, 1700)
-                  }}
+                  onSubmit={submitHandler}
                 /> :
                 <CartItemList
                   items={cartItems}

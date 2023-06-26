@@ -23,8 +23,8 @@ const CartReducer = (state, action) => {
     }
     case 'CLEAR_CART': {
       return {
-        undefined,
-        action
+        ...state,
+        cartItems: state.cartItems.splice(0,state.length)
       }
     }
     case "STORE_STATE": {

@@ -93,10 +93,10 @@ function Navbar() {
             <Link to='/cart'>
               <ShoppingCartIcon sx={{ fontSize: '2em' }} />
               {
-                cartItems.length > 0 &&
+                cartItems.length  ?
                 <div className={`absolute flex justify-center items-center rounded-lg top-0 left-0 w-5 h-5 ${isOpen ? 'bg-white' : 'bg-amber-500'}`}>
                   {cartItems.length}
-                </div>
+                </div> : ''
               }
             </Link>
           </div>
