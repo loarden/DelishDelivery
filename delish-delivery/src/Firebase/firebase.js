@@ -5,12 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC_4U8ZWYm9oPF7ZbVwBYEdugT1vi_Smaw",
-  authDomain: "delishdelivery-e1cc9.firebaseapp.com",
-  projectId: "delishdelivery-e1cc9",
-  storageBucket: "delishdelivery-e1cc9.appspot.com",
-  messagingSenderId: "493473571403",
-  appId: "1:493473571403:web:c89d3ef273ba707d84e3ce"
+  //config...
 };
 
 // Initialize Firebase
