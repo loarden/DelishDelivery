@@ -10,7 +10,7 @@ function Contact() {
 
   return (
     <>
-      <main className="contact-bg relative bg-center bg-cover w-full h-screen flex justify-center items-center before:top-0 before:left-0 before:absolute before:w-full before:h-full before:backdrop-brightness-50">
+      <main className="contact-bg relative bg-center bg-cover w-full min-h-screen h- flex justify-center items-center before:top-0 before:left-0 before:absolute before:w-full before:h-full before:backdrop-brightness-50">
         <ContactForm
           isSent={isSent}
           onSubmit={(e) => {
